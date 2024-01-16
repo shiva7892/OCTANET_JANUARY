@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+	background-image: linear-gradient(100deg, #575656, #062e3f);
+	font-family: 'Poppins', sans-serif;
+}
+
+.input {
+	width: 400px;
+	height: 30px;
+	border-radius: 10px;
+	border-style: solid;
+	background: #808080;
+	font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	color: #ffffff;
+}
+
+::placeholder {
+	color: #ffffff;
+}
+
+.bttn {
+	margin-left: -20px;
+	padding: 8px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	border-style: solid;
+	border-color: #062e3f;
+}
+
+#submitButton{
+	cursor: pointer;
+}
+
+.content {
+	text-align: center;
+	display: inline;
+}
+
+.content h1 {
+	color: #fff;
+	font-size: 8em;
+	position: absolute;
+	top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+}
+
+.content h1:nth-child(1) {
+	color: transparent;
+	-webkit-text-stroke: 2px #000000;
+}
+
+.content h1:nth-child(2) {
+	color: linear-gradient(100deg, #575656, #062e3f);
+	animation: animate 4s ease-in-out infinite;
+}
+
+@keyframes animate {
+	0%, 100% {
+		clip-path: polygon(
+			0% 45%,
+			16% 44%,
+			33% 50%,
+			54% 60%,
+			70% 61%,
+			84% 59%,
+			100% 52%,
+			100% 100%,
+			0% 100%
+		);
+	}
+
+	50% {
+		clip-path: polygon(
+			0% 60%,
+			15% 65%,
+			34% 66%,
+			51% 62%,
+			67% 50%,
+			84% 45%,
+			100% 46%,
+			100% 100%,
+			0% 100%
+		);
+	}
+}
+
+
+
+.task {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+    animation: expandTask 0.3s ease-out; 
+}
+
+.task input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.delete-icon {
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.new-task {
+    background-color: #cfe2f3;
+}
+
+.new-task input[type="checkbox"],
+.new-task .delete-icon{
+    background-color: #a1d99b;
+}
+
+.task-deleted {
+    animation: collapseTask 0.3s ease-in; 
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes expandTask {
+    from {
+        max-height: 0;
+    }
+    to {
+        max-height: 50px; 
+    }
+}
+
+@keyframes collapseTask {
+    from {
+        max-height: 50px; 
+    }
+    to {
+        max-height: 0;
+    }
+}
+
+
